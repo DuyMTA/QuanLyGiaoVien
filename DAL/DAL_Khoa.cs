@@ -36,6 +36,13 @@ namespace DAL
             ada_khoa.Fill(dtKhoa);
             return dtKhoa;
         }
+        public DataTable getTenBoMons(string s)
+        {
+            SqlDataAdapter ada_khoa = new SqlDataAdapter("SELECT MaBoMon FROM BoMon WHERE Ma_Khoa='" + s + "'", conn);
+            DataTable dtKhoa = new DataTable();
+            ada_khoa.Fill(dtKhoa);
+            return dtKhoa;
+        }
         public DataTable getAllBoMon()
         {
             SqlDataAdapter ada_khoa = new SqlDataAdapter("SELECT * FROM BoMon", conn);
