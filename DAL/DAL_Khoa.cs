@@ -29,6 +29,7 @@ namespace DAL
             ada_khoa.Fill(dtKhoa);
             return dtKhoa;
         }
+        //duy change this
         public DataTable getAllKhoa()
         {
             SqlDataAdapter ada_khoa = new SqlDataAdapter("SELECT * FROM KHOA", conn);
