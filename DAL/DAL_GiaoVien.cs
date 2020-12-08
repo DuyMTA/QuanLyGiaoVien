@@ -54,6 +54,7 @@ namespace DAL
         }
         public DataTable getGiaoVien(string s)
         {
+        	//duy change this
             string query="select * from GiaoVien";
             SqlDataAdapter giaovien = new SqlDataAdapter(query, conn);
             DataTable dtKhoa = new DataTable();
