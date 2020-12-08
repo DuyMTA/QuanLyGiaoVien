@@ -52,6 +52,14 @@ namespace DAL
             giaovien.Fill(dtKhoa);
             return dtKhoa;
         }
+        public DataTable getGiaoVien(string s)
+        {
+            string query="select * from GiaoVien";
+            SqlDataAdapter giaovien = new SqlDataAdapter(query, conn);
+            DataTable dtKhoa = new DataTable();
+            giaovien.Fill(dtKhoa);
+            return dtKhoa;
+        }
         public  bool Them(DTO_GiaoVien gv)
         {
             string query = "INSERT INTO dbo.GiaoVien( Ma_GiaoVien , HoTen ,NgaySinh ,GioiTinh , Email ,Ma_HocVi ,Ma_HocHam ,Ma_Khoa ,Ma_BoMon , Ma_MonHoc ,ChucVu ,DiaChi,paths )VALUES  ( '"+gv.Ma_GiaoVien+"' , N'"+gv.HoTen+"' , '"+gv.NgaySinh+"',N'"+gv.GioiTinh+"' , '"+gv.Email+"' ,  '"+gv.HocVi+"' , '"+gv.HocHam+"' , '"+gv.Ma_Khoa+"' , '"+gv.Ma_BoMon+"' , '"+gv.Ma_MonHoc1+"' , N'"+gv.ChucVu+"' , N'"+gv.DiaChi1+"','"+gv.DuongDanAnh+"' )";
