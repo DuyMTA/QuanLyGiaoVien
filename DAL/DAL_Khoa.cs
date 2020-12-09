@@ -90,6 +90,7 @@ namespace DAL
             return false;
 
         }
+        //duy change this
         public bool SuaKhoa(DTO_Khoa k)
         {
             try
