@@ -90,6 +90,37 @@ namespace DAL
             return false;
 
         }
+        public bool SuaKhoa(DTO_Khoa k)
+        {
+            try
+            {
+                // Ket noi
+                conn.Open();
 
+                // Query string - vì mình để TV_ID là identity (giá trị tự tăng dần) nên ko cần fải insert ID
+                string SQL = "update dbo.Khoa set TenKhoa = N'" + k.TenKhoa1 + "' WHERE  Ma_Khoa = '" + k.Ma_Khoa + "'";
+          
+
+                // Command (mặc định command type = text nên chúng ta khỏi fải làm gì nhiều).
+                SqlCommand cmd = new SqlCommand(SQL, conn);
+
+                // Query và kiểm tra
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                // Dong ket noi
+                conn.Close();
+            }
+
+            return false;
+
+        }
     }
 }
