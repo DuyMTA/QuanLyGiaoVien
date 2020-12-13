@@ -51,6 +51,7 @@ namespace DAL
             SqlDataReader s = cmd.ExecuteReader();
             if (s.Read() == true)
             {
+            	MessageBox.Show("Thành Công");
                 conn.Close();
                 return true;
             }

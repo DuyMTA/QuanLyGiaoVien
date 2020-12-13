@@ -52,7 +52,7 @@ namespace DAL
             giaovien.Fill(dtKhoa);
             return dtKhoa;
         }
-        public DataTable getGiaoVien(string s)
+        public DataTable getAllGiaoVien(string s)
         {
         	//duy change this
             string query="select * from GiaoVien";
